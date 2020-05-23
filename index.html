@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href='https://fonts.googleapis.com/css?family=Karla:100,200,300,400,500,600,700,800,900' rel='stylesheet'>
+  <title>Frontend Mentor | Single Price Grid Component</title>
+  <style>
+  /*---- General ----*/
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    font-family: Karla;
+    font-size: 14px;
+    --cyan: #B0FBFF;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #E6EFF6;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 20rem);
+    grid-template-areas:
+      'top top top top'
+      'lb lb rb rb';
+    width: 45%;
+    box-shadow: 0px 15px 30px 10px #D1E1EE;
+    border-radius: 15px;
+  }
+
+  section {
+    padding: 3rem;
+    font-size: 1.3rem;
+  }
+
+  section p:nth-of-type(1) {
+    font-weight: bold;
+  }
+
+  .lb,
+  .rb {
+    color: white;
+  }
+
+  a {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  /*---- Media Queries  ----*/
+  @media screen and (max-width: 1400px) {
+    main {
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    main {
+      width: 65%;
+    }
+
+    .lb p:last-of-type {
+      font-size: 1.2rem;
+    }
+  }
+
+   @media screen and (max-width: 1000px) {
+    main {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    main {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 20rem);
+      grid-template-areas:
+        'top top top'
+        'lb lb lb'
+        'rb rb rb';
+    }
+
+    .top p:last-of-type {
+      font-size: 1.1rem;
+    }
+
+    .lb {
+      border-radius: 0 !important;
+    }
+
+    .rb {
+      border-radius: 0 0 15px 15px !important;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    main {
+      width: 95%;
+    }
+  }
+
+  /*---- Main ----*/
+
+  .top {
+    grid-area: top;
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .top p:nth-of-type(1) {
+    font-size: 1.8rem;
+    color: #2BB3B1;
+  }
+
+  .top p:nth-of-type(2) {
+    font-weight: bold;
+    color: #BFDF32;
+  }
+
+  .top p:nth-of-type(3) {
+    color: #9198A2;
+  }
+
+  .lb {
+    grid-area: lb;
+    color: white;
+    background-color: #2BB3B1;
+    border-radius: 0 0 0 15px;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  .lb p:nth-of-type(2) {
+    color: var(--cyan);
+  }
+
+  .sign-up_btn {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: block;
+    padding: 1rem 1.5rem;
+    background-color: #BFDF32;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    box-shadow: 0 10px 25px -10px #218a88;
+  }
+
+  .rb {
+    grid-area: rb;
+    color: white;
+    background-color: #4ABEBD;
+    border-radius: 0 0 15px 0;
+  }
+
+  .rb p:nth-of-type(2) {
+    color: var(--cyan);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  /*---- Footer ----*/
+
+  .attribution {
+    transform: translateY(3rem);
+    font-size: 11px;
+  }
+
+  .attribution a {
+    font-size: initial;
+    color: hsl(228, 45%, 44%);
+  }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="top">
+      <p>Join our community</p>
+      <p>30-day, hassle-free money back guarantee</p>
+      <p>Gain access to our full library of tutorials along with expert code reviews.
+        Perfect for any developers who are serious about honing their skills.</p>
+    </section>
+    <section class="lb">
+      <p>Monthly Subscription</p>
+      <p><span class="price">&dollar;29</span> per month</p>
+      <p>Full access for less than &dollar;1 a day</p>
+      <a href="#" class="sign-up_btn">Sign Up</a>
+    </section>
+    <section class="rb">
+      <p>Why Us</p>
+      <p>Tutorials by industry experts
+        Peer &amp; expert code review
+        Coding exercises
+        Access to our GitHub repos
+        Community forum
+        Flashcard decks
+        New videos every week</p>
+    </section>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.</p>
+  </footer>
+</body>
+
+</html>
